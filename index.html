@@ -76,13 +76,10 @@
       function drawRegionsMap() {
 
         var data = google.visualization.arrayToDataTable([
-          ['Country', 'Popularity'],
-          ['Germany', 200],
-          ['United States', 300],
-          ['Brazil', 400],
-          ['Canada', 500],
-          ['France', 600],
-          ['RU', 100]
+          ['Country', 'Visited'],
+          ['United States', 1],
+          ['Philippines', 1],
+          ['Canada', 1]
         ]);
 
         var options = {};
@@ -91,6 +88,15 @@
 
         chart.draw(data, options);
       }
+
+      function selectHandler() {
+          var selectedItem = chart.getSelection()[0];
+          if (selectedItem) {
+            var location = data.getValue(selectedItem.row, 0);
+            alert('The user selected ' + location);
+          }
+        }
+
     </script>
     <div id="regions_div" style="width: 900px; height: 500px;"></div>
 
