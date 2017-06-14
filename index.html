@@ -74,32 +74,118 @@
       google.charts.setOnLoadCallback(drawRegionsMap);
 
       function drawRegionsMap() {
-
-        var data = google.visualization.arrayToDataTable([
-          ['Country', 'Visited'],
-          ['United States', 1],
-          ['Philippines', 1],
-          ['Canada', 1]
+        var worldData = google.visualization.arrayToDataTable([
+          ['Country'],
+          ['United States'],
+          ['Philippines'],
+          ['Canada']
         ]);
 
-        var options = {};
+        var worldOptions = {};
 
-        var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+        var chart = new google.visualization.GeoChart(document.getElementById('world_div'));
 
-        chart.draw(data, options);
+        chart.draw(worldData, worldOptions);
+
+        google.visualization.events.addListener(chart, "regionClick", zoomToCountry);
       }
 
-      function selectHandler() {
-          var selectedItem = chart.getSelection()[0];
-          if (selectedItem) {
-            var location = data.getValue(selectedItem.row, 0);
-            alert('The user selected ' + location);
-          }
+      function zoomToCountry(eventData) {
+        var iso = eventData["region"];
+        var countryData;
+        switch(iso) {
+          case "PH":
+            countryData = google.visualization.arrayToDataTable([
+              ['Region'],
+              ['Manila'],
+              ['Baguio'],
+              ['Surigao'],
+              ['Tagaytay']
+            ]);
+            break;
+            break;
+          case "US":
+                  console.log("USA");
+            countryData = google.visualization.arrayToDataTable([
+              ['State', 'Visited'],
+              ['US-CA', 1],
+              ['US-CO', 0],
+              ['US-WI', 0],
+              ['US-WA', 1],
+              ['US-NV', 1],
+              ['US-DC', 1],
+              ['US-VA', 1],
+              ['US-MD', 1],
+              ['US-FL', 1],
+              ['US-OR', 1]
+            ]);
+            break;
+          case "CA":
+            countryData = google.visualization.arrayToDataTable([
+              ['Region'],
+              ['Vancouver']
+            ]);
+            break;
+        }
+        var countryOptions = {
+        displayMode: 'regions',
+        resolution:'provinces',
+        colorAxis:{
+          colors:['#c2efc2','green'],
+          minValue: 0,
+          maxValue: 1},
+       region:'US',
+       legend:'none'
+      };
+        // var countryOptions = {
+        //   region: iso,
+        //   displayMode: 'regions',
+        //   resolution: 'provinces',
+        //   colorAxis: {colors: ['blue','red','green'],
+        //   minValue: 0,
+        //   maxValue: 2}
+        // };
+
+        var countryChart = new google.visualization.GeoChart(document.getElementById('country_div'));
+        countryChart.draw(countryData, countryOptions);
+
+        google.visualization.events.addListener(countryChart, "regionClick", zoomToState);
+      }
+
+      function zoomToState(eventData) {
+        console.log(eventData);
+        var iso = eventData["region"];
+        var stateData;
+        switch(iso) {
+          case "US-CA":
+            stateData = google.visualization.arrayToDataTable([
+              ['City'],
+              ['San Francisco'],
+              ['Los Angeles'],
+              ['San Ramon'],
+              ['Berkeley']
+            ]);
+            break;
+          case "US-TX":
+            countryData = google.visualization.arrayToDataTable([
+              ['City'],
+              ['Dallas']
+            ]);
         }
 
-    </script>
-    <div id="regions_div" style="width: 900px; height: 500px;"></div>
+        var stateOptions = {
+          region: iso,
+          resolution: 'provinces',
+          displayMode: 'markers'
+        };
+        var stateChart = new google.visualization.GeoChart(document.getElementById('state_div'));
+        stateChart.draw(stateData, stateOptions);
+      }
 
+    </script>
+    <div id="world_div" style="width: 900px; height: 500px;"></div>
+    <div id="country_div" style="width: 900px; height: 500px;"></div>
+    <div id="state_div" style="width: 900px; height: 500px;"></div>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
