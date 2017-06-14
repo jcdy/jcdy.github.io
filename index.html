@@ -82,17 +82,9 @@
           ['Canada', 1]
         ]);
 
-        var options = {'title':'JC\'s Travels'};
+        var options = {};
 
         var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
-
-        function selectHandler() {
-          var selectedItem = chart.getSelection()[0];
-          if (selectedItem) {
-            var location = data.getValue(selectedItem.row, 0);
-            alert('The user selected ' + location);
-          }
-        }
 
         chart.draw(data, options);
       }
