@@ -97,10 +97,10 @@
           case "PH":
             countryData = google.visualization.arrayToDataTable([
               ['Region'],
-              ['Manila'],
-              ['Baguio'],
-              ['Surigao'],
-              ['Tagaytay']
+              ['PH-QUE', 1],
+              ['PH-AKL', 1],
+              ['PH-RIZ', 1],
+              ['PH-SUN', 1]
             ]);
             break;
             break;
@@ -153,7 +153,6 @@
       }
 
       function zoomToState(eventData) {
-        console.log(eventData);
         var iso = eventData["region"];
         var stateData;
         switch(iso) {
@@ -165,7 +164,6 @@
               ['San Ramon'],
               ['Berkeley']
             ]);
-            console.log(stateData);
             break;
           case "US-TX":
             countryData = google.visualization.arrayToDataTable([
@@ -174,7 +172,6 @@
             ]);
             break;
         }
-        console.log(stateData);
         var stateOptions = {
           region: iso,
           resolution: 'provinces',
@@ -184,8 +181,6 @@
         stateChart.draw(stateData, stateOptions);
       }
 
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCm1gb9yuqrLdVrpVw2E140Ntl1pQ8xh9k&callback=initMap"
-  type="text/javascript"></script>
     </script>
     <div id="world_div" style="width: 900px; height: 500px;"></div>
     <div id="country_div" style="width: 900px; height: 500px;"></div>
@@ -199,9 +194,17 @@
       ga('create', 'UA-101017549-1', 'auto');
       ga('send', 'pageview');
 
+
     </script>
 
-content_copy
+    <script>
+      function initMap(){
+        //
+      }
+    </script>
+
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCm1gb9yuqrLdVrpVw2E140Ntl1pQ8xh9k&callback=initMap"
+  type="text/javascript"></script>
 
   </body>
 
