@@ -165,14 +165,16 @@
               ['San Ramon'],
               ['Berkeley']
             ]);
+            console.log(stateData);
             break;
           case "US-TX":
             countryData = google.visualization.arrayToDataTable([
               ['City'],
               ['Dallas']
             ]);
+            break;
         }
-
+        console.log(stateData);
         var stateOptions = {
           region: iso,
           resolution: 'provinces',
@@ -182,6 +184,8 @@
         stateChart.draw(stateData, stateOptions);
       }
 
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCm1gb9yuqrLdVrpVw2E140Ntl1pQ8xh9k&callback=initMap"
+  type="text/javascript"></script>
     </script>
     <div id="world_div" style="width: 900px; height: 500px;"></div>
     <div id="country_div" style="width: 900px; height: 500px;"></div>
@@ -196,6 +200,8 @@
       ga('send', 'pageview');
 
     </script>
+
+content_copy
 
   </body>
 
