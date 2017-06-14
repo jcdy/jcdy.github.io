@@ -96,13 +96,14 @@
         switch(iso) {
           case "PH":
             countryData = google.visualization.arrayToDataTable([
-              ['Region'],
-              ['PH-QUE', 1],
-              ['PH-AKL', 1],
-              ['PH-RIZ', 1],
-              ['PH-SUN', 1]
+              ['Province', 'Visited'],
+              ['PH-00', 1], // National Capital Region
+              ['PH-06', 1], // Western Visayas
+              ['PH-15', 1], // Cordillera
+              ['PH-03', 1], // Central Luzon
+              ['PH-40', 1], // Calabarzon
+              ['PH-13', 1] // Caraga (Surigao)
             ]);
-            break;
             break;
           case "US":
                   console.log("USA");
@@ -117,13 +118,15 @@
               ['US-VA', 1],
               ['US-MD', 1],
               ['US-FL', 1],
+              ['US-PA', 1],
               ['US-OR', 1]
             ]);
             break;
           case "CA":
             countryData = google.visualization.arrayToDataTable([
-              ['Region'],
-              ['Vancouver']
+              ['Province', 'Visited'],
+              ['CA-BC', 1],
+              ['ON', 1]
             ]);
             break;
         }
@@ -134,17 +137,9 @@
           colors:['#c2efc2','green'],
           minValue: 0,
           maxValue: 1},
-       region:'US',
+       region: iso,
        legend:'none'
       };
-        // var countryOptions = {
-        //   region: iso,
-        //   displayMode: 'regions',
-        //   resolution: 'provinces',
-        //   colorAxis: {colors: ['blue','red','green'],
-        //   minValue: 0,
-        //   maxValue: 2}
-        // };
 
         var countryChart = new google.visualization.GeoChart(document.getElementById('country_div'));
         countryChart.draw(countryData, countryOptions);
@@ -162,13 +157,58 @@
               ['San Francisco'],
               ['Los Angeles'],
               ['San Ramon'],
+              ['San Jose'],
+              ['Oakland'],
+              ['Davis'],
+              ['Sacramento'],
+              ['Tahoe'],
+              ['Yosemite'],
+              ['Monterey'],
+              ['Santa Cruz'],
+              ['Bakersfield'],
+              ['Anaheim'],
+              ['Hollywood'],
+              ['Oxnard'],
+              ['Santa Monica'],
+              ['San Diego'],
               ['Berkeley']
             ]);
             break;
-          case "US-TX":
-            countryData = google.visualization.arrayToDataTable([
+          case "US-WA":
+            stateData = google.visualization.arrayToDataTable([
               ['City'],
-              ['Dallas']
+              ['Seattle']
+            ]);
+            break;
+          case "US-NV":
+            stateData = google.visualization.arrayToDataTable([
+              ['City'],
+              ['Reno'],
+              ['Las Vegas']
+            ]);
+            break;
+          case "US-FL":
+            stateData = google.visualization.arrayToDataTable([
+              ['City'],
+              ['Orlando'],
+              ['Celebration'],
+              ['DisneyWorld']
+            ]);
+            break;
+          case "CA-BC":
+          console.log("Canada");
+            stateData = google.visualization.arrayToDataTable([
+              ['City'],
+              ['Richmond'],
+              ['Vancouver']
+            ]);
+            break;
+          case "PH-00":
+            console.log("Manila");
+            stateData = google.visualization.arrayToDataTable([
+              ['City'],
+              ['Manila'],
+              ['San Juan']
             ]);
             break;
         }
@@ -178,6 +218,7 @@
           displayMode: 'markers'
         };
         var stateChart = new google.visualization.GeoChart(document.getElementById('state_div'));
+        console.log("draw canada");
         stateChart.draw(stateData, stateOptions);
       }
 
