@@ -1,24 +1,64 @@
+.jclogo {
+	padding: 10px 10px 10px 10px;
+	display:inline;
+	float:left;
+	width: 100px;
+	height: auto;
+}
+
+.btn-outline-info {
+	color: white !important;
+	border-color: white !important;
+	border-radius: 24px !important;
+}
+
+/* List Items */
+header li{
+	float: left;
+	display: inline;
+	padding: 20px 10px 0 20px;
+}
+
+header li a{
+	color: white;
+}
+
+
+header nav{
+	float: right;
+	margin-top: 10px;
+}
+
+header {
+	background: transparent;
+	min-height: 40px;
+	z-index: 9999;
+}
+
 /* Hero */
 #hero {
 	/* Hero image attributes */
 	background-image: url(../images/ChocolateHills.jpg);
 	background-size: cover;
-	background-position: center center;
+	background-position: 0 0;
 	/* Container attributes */
 	position: relative;
 	top: 0;
 	bottom: 0;
 	height: 100vh;
 	z-index: -10;
+	margin-top: -100px;
 	/* Flex box */
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	text-align: center;
 }
 
 #hero > h1 {
 	color: #fff;
+	margin-top: -30px;
 }
 
 #hero-overlay {
@@ -45,13 +85,13 @@ body{
 	overflow: hidden;
 }
 
-/* Unordered List */
+/* Unordered List
 ul{
 	margin: 0;
 	padding: 0;
 }
 
-/* Header */
+/* Header
 header{
 	background: #35434a;
 	color: #ffffff;
@@ -60,7 +100,7 @@ header{
 	border-bottom: #0b7de2 5px solid;
 }
 
-/* Header Links (for <a> tags) */
+ Header Links (for <a> tags)
 header a{
 	color: #ffffff;
 	text-decoration: none;
@@ -68,36 +108,16 @@ header a{
 	font-size: 16px;
 }
 
-/* List Items */
-header li{
-	float: left;
-	display: inline;
-	padding: 0 20px 0 20px;
-}
-
-/* jclogo id */
-header #jclogo{
-	float: left;
-}
-
-header #jclogo h1{
-	margin: 0;
-}
-
-header nav{
-	float: right;
-	margin-top: 10px;
-}
-
-/* Current State */
+Current State
 header.highlight, header .current a{
 	color: #e8491d;
 	font-weight: bold;
 }
 
-/* Hover State */
+Hover State
 header a:hover{
 	color: #cccccc;
 	font-weight: bold;
 }
 
+*/
