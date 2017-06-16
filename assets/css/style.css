@@ -19,11 +19,6 @@ header li{
 	padding: 20px 10px 0 20px;
 }
 
-header li a{
-	color: white;
-}
-
-
 header nav{
 	float: right;
 	margin-top: 10px;
@@ -32,7 +27,14 @@ header nav{
 header {
 	background: transparent;
 	min-height: 40px;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.25);
 	z-index: 9999;
+
+}
+
+header .current a, .btn-outline-info .current {
+	font-weight: bold;
+	border-width: 2px; !important;
 }
 
 /* Hero */
