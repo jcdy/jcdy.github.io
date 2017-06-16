@@ -1,3 +1,36 @@
+/* Hero */
+#hero {
+	/* Hero image attributes */
+	background-image: url(../images/ChocolateHills.jpg);
+	background-size: cover;
+	background-position: center center;
+	/* Container attributes */
+	position: relative;
+	top: 0;
+	bottom: 0;
+	height: 100vh;
+	z-index: -10;
+	/* Flex box */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+#hero > h1 {
+	color: #fff;
+}
+
+#hero-overlay {
+	position: absolute;
+	background-color: rgba(0, 0, 0, 0.5); /* 0.5 opacity */
+	top: 0;
+	bottom: 0;
+	height: 100%;
+	width: 100%;
+	z-index: -5;
+}
+
 body{
 	font: 15px/1.5 Arial, Helvetica, sans-serif;
 	padding: 0;
