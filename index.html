@@ -9,27 +9,25 @@
   </head>
 
   <!-- Navigation bar -->
-  <header>
-    <div class="container">
-      <img src="assets/images/JCDyLogo.png" class="jclogo" alt="JC-Logo">
-      <nav>
-        <ul>
-          <li class="current"><a href="index.html" class="btn btn-outline-info" role="button">Home</a></li>
-          <li><a href="about.html" class="btn btn-outline-info" role="button">About</a></li>
-          <li><a href="projects.html" class="btn btn-outline-info" role="button">Projects</a></li>
-          <li><a href="travel.html" class="btn btn-outline-info" role="button">Travel</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  <div id="navbar">
+    <div id="logo"><img src="assets/images/JCDyLogo.png" class="jclogo" alt="JC-Logo"></div>
+    <nav>
+      <ul>
+        <li class="current"><a href="index.html" class="btn btn-outline-info" role="button">Home</a></li>
+        <li><a href="about.html" class="btn btn-outline-info" role="button">About</a></li>
+        <li><a href="projects.html" class="btn btn-outline-info" role="button">Projects</a></li>
+        <li><a href="travel.html" class="btn btn-outline-info" role="button">Travel</a></li>
+      </ul>
+    </nav>
+  </div>
+  <!-- Hero background image & overlay -->
+  <div id="hero">
+    <div id="hero-overlay"></div>
+    <h1>JC Dy</h1>
+    <button type="button" class="btn btn-primary">About Me</button>
+  </div>
 
   <body>
-    <!-- Hero background image -->
-    <div id="hero">
-      <div id="hero-overlay"></div>
-      <h1>JC Dy</h1>
-      <button type="button" class="btn btn-primary">About Me</button>
-    </div>
 
     <section id="showcase">
       <div class="container">
@@ -243,8 +241,8 @@
     </script>
 
     <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-    <script src="js/navshrink.js"></script>
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/navshrink.js"></script>
 
     <!-- jQuery, Tether, and Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
