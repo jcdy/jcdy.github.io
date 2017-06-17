@@ -22,6 +22,35 @@
 	padding: 3% 10px 0 20px;
 }
 
+/* Current state */
+#navbar nav .current a{
+	background-color: rgba(0, 204, 255, 0.75);
+	font-weight: bold;
+}
+
+/* Hover state */
+#navbar nav a:hover{
+	background-color: rgba(0, 204, 255, 0.75);
+	font-weight: bold;
+}
+
+/* Shrinks nav bar when user scrolls */
+#navbar.shrink {
+	height: 12%;
+	transition: all ease .5s;
+	background: black;
+}
+
+#navbar.shrink #logo {
+	padding: 10px;
+	transition: all ease .5s;
+}
+
+#navbar.shrink li {
+	padding: 1% 5px 0 20px;
+	transition: all ease .5s;
+}
+
 #logo {
 	padding: 10px 0 0 20px;
 	transition: all ease .5s;
