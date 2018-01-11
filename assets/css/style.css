@@ -5,14 +5,46 @@
 } 
 
 body {
-    display: block;
-    margin: 0px;
-    margin-top: 0px;
-    margin-right: 0px;
-    margin-bottom: 0px;
-    margin-left: 0px;
+  display: block;
+  margin: 0px 0px 0px 0px;
 }
 
+.world {
+  position: absolute;
+  top: 0; 
+  bottom: 0;
+  left: 0; 
+  right: 0;
+  margin: auto;
+  width: 1000px;
+  height: 500px;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.right {
+  float: right;
+  width: 60%;
+}
+
+.passport-border {
+  background-color:#2B3E51;
+  width: 92%;
+  height: 100%;
+  padding: 12px 12px 12px 12px;
+  border-radius: 4px 4px 4px 4px;
+}
+
+.passport
+{
+  margin: auto;
+  background-color: white;
+  border-radius: 4px 4px 4px 4px;
+  width: 2000px;
+  height: 500px;
+  max-width:100%;
+  max-height:100%;
+}
 /*
 
 Current State
