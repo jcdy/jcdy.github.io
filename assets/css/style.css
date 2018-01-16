@@ -79,12 +79,16 @@ body {
   font-family: Roboto;
   font-size: 11;
   font-style: italic;
+  line-height: 1.7;
+  position: relative;
 }
 
 .answer {
-  font-family: Lato;
+  font-family: Noto Sans;
   font-weight: bold;
   font-size: 15;
+  position: absolute;
+  line-height: .5;
 }
 
 #crease {
@@ -108,6 +112,7 @@ body {
   height: 30%;
   position: relative;
   display: inline-block;
+  margin: 5% 0% 0% 5%;
 }
 
 .stamp img {
