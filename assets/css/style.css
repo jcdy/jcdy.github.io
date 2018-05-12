@@ -47,7 +47,6 @@ body {
 }
 
 .top {
-  background-color: rgba(252, 252, 177, 0.05);
   height: 50%;
   position: relative;
 }
@@ -101,22 +100,21 @@ body {
 }
 
 .bottom {
-  background-color: rgba(252, 252, 177, 0.05);
   height: 50%;
   position: relative;
   float: left;
 }
 
 .stamp {
-  width: 15%;
-  height: 30%;
+  width: 12%;
+  height: 28%;
   position: relative;
   display: inline-block;
-  margin: 5% 0% 0% 5%;
+  margin: 15% 6% 0% 6%;
 }
 
 .stamp img {
-  opacity: 0.7;
+  opacity: 0.5;
   background-size: 100%;
   width: 100%;
 }
