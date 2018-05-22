@@ -22,6 +22,13 @@ var map = AmCharts.makeChart( "chartdiv", {
   "type": "map",
   "theme": "light",
 
+  "dragMap": false,
+  "zoomOnDoubleClick": false,
+  "zoomControl": {
+    "zoomControlEnabled": false,
+    "panControlEnabled": false
+  },
+
   "dataProvider": {
     "map": "worldLow",
     "zoomLevel": 3,
